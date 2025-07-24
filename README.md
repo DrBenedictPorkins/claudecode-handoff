@@ -19,8 +19,8 @@ Perfect for maintaining context when switching between sessions, sharing project
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/handoff-commands.git
-   cd handoff-commands
+   git clone https://github.com/DrBenedictPorkins/claudecode-handoff.git
+   cd claudecode-handoff
    ```
 
 2. Run the installation script:
@@ -59,7 +59,7 @@ This will load the context from `HANDOFF.md` and restore your session state.
 ## File Structure
 
 ```
-handoff-commands/
+claudecode-handoff/
 ├── README.md              # This file
 ├── install_handoff.sh     # Installation script
 └── commands/
