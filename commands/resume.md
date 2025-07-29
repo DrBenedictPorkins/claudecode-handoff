@@ -10,7 +10,8 @@ After reading HANDOFF.md, please:
 
 1. Confirm you understand the project context and current status
 2. Summarize the key points and next steps
-3. Ask any clarifying questions if needed
-4. Begin working on the highest priority outstanding tasks
+3. List all outstanding tasks with their priorities
+4. Ask which tasks you'd like me to work on, if any
+5. Ask any clarifying questions if needed
 
 Treat this as a seamless continuation of the previous session - all the context you need should be in the handoff file.
