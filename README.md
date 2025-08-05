@@ -1,14 +1,26 @@
-# Claude Code Handoff Commands
+# Claude Code Commands
 
-A simple utility that adds `/handoff` and `/resume` slash commands to Claude Code for seamless project context management across sessions.
+Slash commands for Claude Code to enhance development workflow with context management and session archival.
 
-## Overview
+## TL;DR
 
-This project provides two essential commands for Claude Code:
-- `/handoff` - Capture and save current project context to `HANDOFF.md`
-- `/resume` - Load previously saved project context for continuity
+**Commands:**
+- `/handoff` - Save project context to HANDOFF.md
+- `/resume` - Load context from HANDOFF.md
+- `/wtf-did-we-just-do` - Generate session summary for knowledge base
 
-Perfect for maintaining context when switching between sessions, sharing project state with team members, or preserving work across different environments.
+**Install:** `./install_handoff.sh` or `./install_wtf.sh`
+
+## Commands Overview
+
+### `/handoff`
+Captures current project state, progress, and context into a comprehensive HANDOFF.md file. Merges with existing handoffs and uses temporal focus (recent work gets more detail).
+
+### `/resume` 
+Loads project context from HANDOFF.md to seamlessly continue work from previous sessions. Provides task prioritization and clarifying questions.
+
+### `/wtf-did-we-just-do`
+Creates concise technical summaries for your knowledge base. Focuses on discoveries, solutions, key decisions, and "aha" moments from the current session.
 
 ## Prerequisites
 
@@ -17,54 +29,54 @@ Perfect for maintaining context when switching between sessions, sharing project
 
 ## Installation
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/DrBenedictPorkins/claudecode-handoff.git
-   cd claudecode-handoff
-   ```
+**Handoff/Resume commands:**
+```bash
+./install_handoff.sh
+```
 
-2. Run the installation script:
-   ```bash
-   ./install_handoff.sh
-   ```
+**WTF command:**
+```bash
+./install_wtf.sh
+```
 
-The installer will:
-- Check that Claude Code is properly installed
-- Verify the commands directory exists and is writable
-- Backup any existing handoff/resume commands (with timestamp)
-- Copy the new command files to `~/.claude/commands/`
+Both installers:
+- Verify Claude Code installation and commands directory
+- Backup existing files with timestamps
+- Install commands to `~/.claude/commands/`
 
 ## Usage
 
-### Creating a Handoff
-In any Claude Code session, use:
+**Save project context:**
 ```
 /handoff
 ```
-This will guide you through capturing your current project context and save it to `HANDOFF.md` in your project root.
 
-### Resuming from a Handoff
-In a new Claude Code session, use:
+**Resume from saved context:**
 ```
 /resume
 ```
-This will load the context from `HANDOFF.md` and restore your session state.
+
+**Generate session summary:**
+```
+/wtf-did-we-just-do
+```
 
 ### Best Practices
-- Create handoffs at logical stopping points in your work
-- Include relevant file paths, current objectives, and any important context
-- Use descriptive commit messages when handoffs involve code changes
-- Regularly clean up old `HANDOFF.md` files to avoid confusion
+- Create handoffs at logical stopping points
+- Use `/wtf-did-we-just-do` after solving complex problems or making key discoveries
+- Clean up old `HANDOFF.md` files regularly
 
 ## File Structure
 
 ```
-claudecode-handoff/
+handoff-commands/
 ├── README.md              # This file
-├── install_handoff.sh     # Installation script
+├── install_handoff.sh     # Handoff/resume installer
+├── install_wtf.sh         # WTF command installer
 └── commands/
-    ├── handoff.md         # /handoff command implementation
-    └── resume.md          # /resume command implementation
+    ├── handoff.md         # /handoff command
+    ├── resume.md          # /resume command
+    └── wtf-did-we-just-do.md  # /wtf-did-we-just-do command
 ```
 
 ## Troubleshooting
